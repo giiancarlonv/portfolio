@@ -8,143 +8,143 @@ body {
   background: #f9f9f9;
 }
 
-header, footer {
-  padding: 1rem;
+header {
+  padding: 0.6rem 1rem;
 }
-header nav, footer nav {
+header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-header nav span, footer nav span {
+header nav span {
   font-weight: 800;
+  letter-spacing: 0.1rem;
+  color: #777777;
 }
-header nav ul, footer nav ul {
+header nav ul {
   display: flex;
   align-items: center;
 }
-header nav ul li, footer nav ul li {
+header nav ul li {
   list-style: none;
   margin: 0.5rem;
 }
-header nav ul li a, footer nav ul li a {
+header nav ul li a {
   text-decoration: none;
 }
-header nav ul li img, footer nav ul li img {
+header nav ul li img {
   width: 1.5rem;
 }
 
-main {
-  margin: 0 1.5rem;
-}
 main .section1 {
-  margin-bottom: 2rem;
+  padding: 16rem 2rem;
   display: flex;
   flex-flow: column wrap;
   align-items: flex-start;
-  color: #1e272b;
+  color: #111111;
+  background: #c3c3c3;
 }
 main .section1 h2 {
   margin: 0.5rem 0;
   font-size: 1.8em;
+  font-family: "Montserrat";
+  color: #111111;
 }
 main .section1 a {
-  margin: 1rem 0;
+  margin: 2rem 0;
   font-weight: 700;
-  font-family: "Roboto";
+  font-family: "Montserrat";
   font-size: 1em;
   text-transform: uppercase;
   background: none;
   border: none;
-  color: #1e272b;
-  box-shadow: 0 2px 0 #84a98c;
+  color: #111111;
+  box-shadow: 0 2px 0 #111111;
   text-decoration: none;
 }
 main .section1 p {
-  color: #2f3e46;
+  color: #111111;
 }
 main .section2 {
+  background: #d3d3d3;
+  color: #111111;
+  padding: 2rem;
+}
+main .section2 .text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .section2 .text h1 {
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 0.9em;
+}
+main .section2 .projects-container {
+  margin: 1rem 0;
+}
+main .section2 .projects-container .project {
+  margin-bottom: 2rem;
+}
+main .section2 .projects-container .project .title-explanation {
+  margin: 0.5rem 0 1rem;
+}
+main .section2 .projects-container .project .title-explanation h3 {
+  margin-top: 0.5rem;
+  font-family: "Montserrat";
+}
+main .section2 .projects-container .project .links {
+  align-items: center;
+}
+main .section2 .projects-container .project .links a {
+  text-decoration: none;
+  color: #111111;
+  font-size: 0.9em;
+  margin-right: 0.5rem;
+}
+main .section2 .projects-container .project .links img {
+  width: 0.9rem;
+}
+main .section2 .projects-container .project img {
+  width: 100%;
+}
+main .section3 {
+  padding: 2rem;
+  background: #f4f4f4;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  padding-bottom: 2rem;
-  box-shadow: 0 1px 0 #1e272b;
 }
-main .section2 span {
+main .section3 span {
   text-transform: capitalize;
 }
-main .section2 .skills {
+main .section3 .skills {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   align-items: center;
   gap: 1rem;
 }
-main .section2 .skills img {
+main .section3 .skills img {
   width: 2rem;
-}
-
-.section3 {
-  margin: 2rem 0;
-  color: #1e272b;
-}
-.section3 .text {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.section3 .text a {
-  font-weight: 600;
-  font-size: 0.7em;
-  text-transform: uppercase;
-  color: #1e272b;
-  box-shadow: 0 2px 0 #84a98c;
-  text-decoration: none;
-}
-.section3 .projects-container {
-  margin: 1rem 0;
-}
-.section3 .projects-container .project {
-  margin-bottom: 2rem;
-}
-.section3 .projects-container .project h3 {
-  margin-top: 0.5rem;
-}
-.section3 .projects-container .project .links {
-  align-items: center;
-}
-.section3 .projects-container .project .links a {
-  text-decoration: none;
-  color: #1e272b;
-  font-size: 0.9em;
-  margin-right: 0.5rem;
-}
-.section3 .projects-container .project .links img {
-  width: 0.9rem;
-}
-.section3 .projects-container .project img {
-  width: 100%;
 }
 
 @media (min-width: 800px) {
   header, footer {
-    padding: 2rem;
+    padding: 1rem 2rem;
+  }
+  header nav, footer nav {
+    justify-content: center;
+    flex-direction: column;
   }
   .section1 {
-    margin: 1rem 2rem;
+    margin: 0;
   }
   .section2 {
-    margin: 0 2rem;
+    margin: 0;
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .section3 {
-    margin: 2rem;
-  }
-  .section3 .projects-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    grid-template-columns: 0.3fr 1fr;
   }
 }
 @media (min-width: 1280px) {
