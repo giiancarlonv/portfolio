@@ -5,10 +5,11 @@
 
 body {
   font-family: "Roboto";
-  background: #f9f9f9;
+  background: #111111;
 }
 
 main .section1 {
+  animation: appearFromLeft 0.5s ease;
   height: 100vh;
   padding: 0 2rem;
   display: flex;
@@ -23,6 +24,7 @@ main .section1 h2 {
   font-size: 1.8em;
   font-family: "Montserrat";
   color: #000000;
+  animation: appearFromLeft 0.7s ease-in;
 }
 main .section1 .link {
   margin: 2rem 0;
@@ -61,6 +63,7 @@ main .section2 {
   background: #d3d3d3;
   color: #111111;
   padding: 2rem;
+  animation: appearFromFutherLeft 1.5s ease;
 }
 main .section2 .text {
   display: flex;
@@ -103,12 +106,18 @@ main .section2 .projects-container .project .links img {
 main .section2 .projects-container .project img {
   width: 100%;
 }
-main .section2-desktop {
-  display: none;
+main .section2 .projects-container .project:nth-child(1) {
+  animation: appearFromFutherLeft 1.5s ease;
+}
+main .section2 .projects-container .project:nth-child(2) {
+  animation: appearFromFutherLeft 2s ease;
+}
+main .section2 .projects-container .project:nth-child(3) {
+  animation: appearFromFutherLeft 2.5s ease;
 }
 main .section3 {
   padding: 2rem;
-  background: #f4f4f4;
+  background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,6 +128,7 @@ main .section3 span {
   font-family: "Montserrat";
   font-weight: 700;
   text-transform: uppercase;
+  color: #f9f9f9;
 }
 main .section3 .skills {
   display: grid;
@@ -129,7 +139,41 @@ main .section3 .skills {
 main .section3 .skills img {
   width: 2rem;
 }
+main .section3 .skills .js {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(47%) saturate(628%) hue-rotate(15deg) brightness(108%) contrast(112%);
+}
+main .section3 .skills .react {
+  filter: brightness(0) saturate(100%) invert(81%) sepia(42%) saturate(1045%) hue-rotate(161deg) brightness(100%) contrast(98%);
+  animation: react 5s linear infinite;
+}
+main .section3 .skills .css {
+  filter: brightness(0) saturate(100%) invert(17%) sepia(55%) saturate(6642%) hue-rotate(231deg) brightness(96%) contrast(86%);
+}
+main .section3 .skills .sass {
+  filter: brightness(0) saturate(100%) invert(65%) sepia(97%) saturate(2022%) hue-rotate(293deg) brightness(87%) contrast(81%);
+}
+main .section3 .skills .html {
+  filter: brightness(0) saturate(100%) invert(48%) sepia(36%) saturate(6385%) hue-rotate(346deg) brightness(90%) contrast(100%);
+}
 
+@keyframes appearFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+@keyframes appearFromFutherLeft {
+  from {
+    transform: translateX(-300%);
+    opacity: 0;
+  }
+}
+@keyframes appearFromRight {
+  from {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
 @media (min-width: 800px) {
   header {
     padding: 0 2rem;
@@ -148,22 +192,6 @@ main .section3 .skills img {
     margin: 0;
     display: grid !important;
     grid-template-columns: 0.3fr 1fr;
-  }
-  .section3 .skills .js:hover {
-    filter: brightness(0) saturate(100%) invert(68%) sepia(47%) saturate(628%) hue-rotate(15deg) brightness(108%) contrast(112%);
-  }
-  .section3 .skills .react:hover {
-    filter: brightness(0) saturate(100%) invert(81%) sepia(42%) saturate(1045%) hue-rotate(161deg) brightness(100%) contrast(98%);
-    animation: react 2s linear infinite;
-  }
-  .section3 .skills .css:hover {
-    filter: brightness(0) saturate(100%) invert(17%) sepia(55%) saturate(6642%) hue-rotate(231deg) brightness(96%) contrast(86%);
-  }
-  .section3 .skills .sass:hover {
-    filter: brightness(0) saturate(100%) invert(65%) sepia(97%) saturate(2022%) hue-rotate(293deg) brightness(87%) contrast(81%);
-  }
-  .section3 .skills .html:hover {
-    filter: brightness(0) saturate(100%) invert(48%) sepia(36%) saturate(6385%) hue-rotate(346deg) brightness(90%) contrast(100%);
   }
 }
 @keyframes react {
@@ -185,6 +213,7 @@ main .section3 .skills img {
   }
   main .section2 {
     grid-template-columns: 0.2fr 1fr;
+    align-items: baseline;
   }
   main .section2 .projects-container.desktop {
     margin: 0;
@@ -201,7 +230,7 @@ main .section3 .skills img {
     margin-bottom: 0.1rem;
   }
   main .section2 .projects-container.desktop .project .title-explanation {
-    display: none;
+    width: 60%;
   }
   main .section2 .projects-container.desktop .project .links {
     display: flex;
@@ -220,27 +249,38 @@ main .section3 .skills img {
   }
   main .section2 .projects-container.desktop .project:nth-child(1) .project-image:hover {
     z-index: 1;
-    transform: translate(-70%, 60%) scale(2);
-    transition: 0.4s ease;
+    transform: translate(-70%, 60%) scale(1.8);
+    transition: 0.5s ease-in-out;
   }
   main .section2 .projects-container.desktop .project:nth-child(2) .project-image:hover {
     z-index: 1;
-    transform: translate(-70%) scale(2);
+    transform: translate(-70%) scale(1.8);
     right: 50%;
     transition: 0.4s ease-in-out;
   }
   main .section2 .projects-container.desktop .project:nth-child(3) .project-image:hover {
     z-index: 1;
-    transform: translate(-70%, -65%) scale(2);
+    transform: translate(-70%, -65%) scale(1.8);
     transition: 0.4s ease;
   }
   main .section3 {
     position: absolute;
-    height: 3.7rem;
-    bottom: 0.1rem;
-    width: 45%;
-    flex-direction: row;
-    justify-content: space-between;
-    background: #f9f9f9;
+    bottom: 1%;
+    height: 15%;
+    width: 32.5%;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+@media (min-width: 1536px) {
+  .section1 {
+    height: 120vh !important;
+  }
+  .section2 {
+    grid-template-columns: 0.5fr 3fr !important;
+  }
+  .section3 {
+    bottom: 0.1rem !important;
+    background: #000;
   }
 }/*# sourceMappingURL=styles.css.map */
